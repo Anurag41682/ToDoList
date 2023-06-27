@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(express.static("public"));
-const uri = "mongodb+srv://anurag2002:25092002%40aA@cluster0.rbg9i.mongodb.net/todolistDB";
+const uri = process.env.MONGO_URL;
 mongoose.connect(uri);
 
 const itemsSchema = {
